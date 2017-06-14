@@ -49,7 +49,33 @@ describe GildedRose do
           expect { GildedRose.new(item).update_quality }.to change {
             item[0].sell_in
           }.by(-1)
-          expect { GildedRose.new(item)}
+          expect { GildedRose.new(item).update_quality }.to change {
+            item[0].quality
+          }.by(1)
+        end
+      end
+
+      context 'when the sell_in is higher than 5 but lower than 11' do
+        it 'the quality increases by two' do
+          item = [Item.new("Backstage passes to a TAFKAL80ETC concert", 8, 2)]
+          expect { GildedRose.new(item).update_quality }.to change {
+            item[0].sell_in
+          }.by(-1)
+          expect { GildedRose.new(item).update_quality }.to change {
+            item[0].quality
+          }.by(2)
+        end
+      end
+
+      context 'when the sell_in is lower than 5' do
+        it 'the quality increases by two' do
+          item = [Item.new("Backstage passes to a TAFKAL80ETC concert", 4, 2)]
+          expect { GildedRose.new(item).update_quality }.to change {
+            item[0].sell_in
+          }.by(-1)
+          expect { GildedRose.new(item).update_quality }.to change {
+            item[0].quality
+          }.by(3)
         end
       end
     end
