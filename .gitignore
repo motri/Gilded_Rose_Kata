@@ -25,3 +25,4 @@ rust/**/*
 scala/**/*
 Smalltalk/**/*
 swift/**/*
+coverage/**/*
