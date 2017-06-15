@@ -17,7 +17,7 @@ describe GildedRose do
     end
 
     context 'when the sell_in date is 0' do
-      item = [Item.new('Aged Brie', 0, 0)]
+      item = [Item.new('Aged Brie', -1, 0)]
 
       it 'decreases sell_in by one' do
         expect { GildedRose.new(item).update_quality }.to change {
