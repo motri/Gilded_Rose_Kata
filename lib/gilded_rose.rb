@@ -14,6 +14,7 @@ class GildedRose
     item.sell_in -= 1
     return if item.quality == 0
     item.quality = 0 if item.sell_in < 0
+    return if item.quality == 50
 
 
   end
