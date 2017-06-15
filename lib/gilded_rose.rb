@@ -6,32 +6,37 @@ class GildedRose
   def update_brie(item)
     item.sell_in -= 1
     return if item.quality == 50
-    item.quality += 1 if item.sell_in > 0
-    item.quality += 2 if item.sell_in <= 0
+    item.quality += 1
+    item.quality += 1 if item.sell_in <= 0
   end
 
   def update_pass(item)
-    
+    item.sell_in -= 1
+    return if item.quality == 0
+    item.quality = 0 if item.sell_in < 0
+
+
   end
 
   def update_quality
     @items.each do |item|
       update_brie(item) if item.name == 'Aged Brie'
+      update_pass(item) if item.name == 'Backstage passes to a TAFKAL80ETC concert'
       if item.name != 'Backstage passes to a TAFKAL80ETC concert'
         if item.quality > 0
 
         end
       else
         if item.quality < 50
-          item.quality = item.quality + 1
-          if item.name == 'Backstage passes to a TAFKAL80ETC concert'
-            if item.sell_in < 11
-              item.quality = item.quality + 1 if item.quality < 50
-            end
-            if item.sell_in < 6
-              item.quality = item.quality + 1 if item.quality < 50
-            end
-          end
+          # item.quality = item.quality + 1
+          # if item.name == 'Backstage passes to a TAFKAL80ETC concert'
+          #   # if item.sell_in < 11
+          #   #   item.quality = item.quality + 1 if item.quality < 50
+          #   # end
+          #   # if item.sell_in < 6
+          #   #   item.quality = item.quality + 1 if item.quality < 50
+          #   # end
+          # end
         end
       end
 
