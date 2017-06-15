@@ -12,44 +12,24 @@ class GildedRose
 
   def update_pass(item)
     item.sell_in -= 1
-    return if item.quality == 0
     item.quality = 0 if item.sell_in < 0
+    return if item.quality == 0
     return if item.quality == 50
+    item.quality += 1
+    item.quality += 1 if item.sell_in < 11
+    item.quality += 1 if item.sell_in < 5
+  end
 
-
+  def update_regular(item)
   end
 
   def update_quality
     @items.each do |item|
       update_brie(item) if item.name == 'Aged Brie'
       update_pass(item) if item.name == 'Backstage passes to a TAFKAL80ETC concert'
-      if item.name != 'Backstage passes to a TAFKAL80ETC concert'
-        if item.quality > 0
-
-        end
-      else
-        if item.quality < 50
-          # item.quality = item.quality + 1
-          # if item.name == 'Backstage passes to a TAFKAL80ETC concert'
-          #   # if item.sell_in < 11
-          #   #   item.quality = item.quality + 1 if item.quality < 50
-          #   # end
-          #   # if item.sell_in < 6
-          #   #   item.quality = item.quality + 1 if item.quality < 50
-          #   # end
-          # end
-        end
-      end
-
-      next unless item.sell_in < 0
-
-      next unless item.name != 'Backstage passes to a TAFKAL80ETC concert'
-      if item.quality > 0
-
-      end
-    end
     end
   end
+end
 
 class Item
   attr_accessor :name, :sell_in, :quality
