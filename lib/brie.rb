@@ -1,6 +1,6 @@
 # It understands brie
 class Brie
-  attr_accessor :update_brie, :item
+  attr_accessor :update_brie
 
   def initialize(item)
     @item = item
@@ -12,5 +12,4 @@ class Brie
     @item.quality += 1
     @item.quality += 1 if @item.sell_in <= 0
   end
-
 end

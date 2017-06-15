@@ -2,7 +2,7 @@ require 'brie'
 require 'item'
 
 describe Brie do
-  describe '#update_quality for AGED BRIE' do
+  describe '#update_brie' do
     context 'when the sell_in is higher than 0' do
       item = Item.new('Aged Brie', 2, 0)
 
