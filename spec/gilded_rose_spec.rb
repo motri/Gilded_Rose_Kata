@@ -71,9 +71,7 @@ describe GildedRose do
       end
 
       it 'the quality increases by two' do
-        expect { GildedRose.new(item).update_quality }.to change {
-          item[0].quality
-        }.by(2)
+        expect(item[0].quality).to eq(4)
       end
     end
 
@@ -86,10 +84,8 @@ describe GildedRose do
         }.by(-1)
       end
 
-      it 'the quality increases by two' do
-        expect { GildedRose.new(item).update_quality }.to change {
-          item[0].quality
-        }.by(3)
+      it 'the quality increases by three' do
+        expect(item[0].quality).to eq(5)
       end
     end
 
@@ -103,11 +99,11 @@ describe GildedRose do
       end
 
       it 'the passes quality drops to 0' do
-        GildedRose.new(item).update_quality
         expect(item[0].quality).to eq 0
       end
 
       it 'quality does not decrease any further' do
+        # method is run again to unsure the quality stays the same even after.
         expect { GildedRose.new(item).update_quality }.to change {
           item[0].quality
         }.by(0)
@@ -124,7 +120,23 @@ describe GildedRose do
       end
 
       it 'quality does not increase further' do
-        expect(item[0].quality).to eq 50
+        expect(item[0].quality).to eq(50)
+      end
+    end
+  end
+
+  describe '#update_quality for SULFURAS, HAND OF RAGNAROS' do
+    context "Sulfuras's quality is never changed" do
+      item = [Item.new('Sulfuras, Hand of Ragnaros', 4, 34)]
+
+      it 'does not decrease sell_in' do
+        expect { GildedRose.new(item).update_quality }.to change {
+          item[0].sell_in
+        }.by(0)
+      end
+
+      it 'does not change quality' do
+        expect(item[0].quality).to eq(34)
       end
     end
   end
