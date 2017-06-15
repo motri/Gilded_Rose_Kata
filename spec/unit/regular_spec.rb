@@ -1,4 +1,3 @@
-require 'item'
 require 'regular'
 
 describe 'Regular' do
