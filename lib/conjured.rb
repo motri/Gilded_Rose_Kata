@@ -7,5 +7,6 @@ class Conjured
 
   def update_conjured
     @item.sell_in -= 1
+    @item.quality -= 2 unless @item.quality.zero?
   end
 end
