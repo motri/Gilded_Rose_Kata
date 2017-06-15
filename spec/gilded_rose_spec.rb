@@ -1,45 +1,52 @@
 require 'gilded_rose'
 
 describe GildedRose do
-  describe 'AGED BRIE' do
+  describe '#update_quality for AGED BRIE' do
+
     context 'when the sell_in is higher than 0' do
-      it 'adds one to the quality ' do
-        item = [Item.new('Aged Brie', 2, 0)]
+      item = [Item.new('Aged Brie', 2, 0)]
+
+      it 'decreases sell_in by one' do
         expect { GildedRose.new(item).update_quality }.to change {
           item[0].sell_in
         }.by(-1)
-        expect { GildedRose.new(item).update_quality }.to change {
-          item[0].quality
-        }.by(1)
+      end
+
+      it 'increases quality by one' do
+        expect(item[0].quality).to eq(1)
       end
     end
 
     context 'when the sell_in date is 0' do
-      it 'it increases two quality next day' do
-        item = [Item.new('Aged Brie', 0, 0)]
+      item = [Item.new('Aged Brie', 0, 0)]
+
+      it 'decreases sell_in by one' do
         expect { GildedRose.new(item).update_quality }.to change {
           item[0].sell_in
         }.by(-1)
-        expect { GildedRose.new(item).update_quality }.to change {
-          item[0].quality
-        }.by(2)
+      end
+      it 'increases quality by two' do
+        expect(item[0].quality).to eq(2)
       end
     end
 
     context 'when the value of quality is already 50' do
-      it 'it does not increase in value further' do
-        item = [Item.new('Aged Brie', 0, 50)]
+      item = [Item.new('Aged Brie', 0, 50)]
+
+      it 'decreases sell_in by one' do
         expect { GildedRose.new(item).update_quality }.to change {
           item[0].sell_in
         }.by(-1)
-        expect { GildedRose.new(item).update_quality }.to change {
-          item[0].quality
-        }.by(0)
+      end
+
+      it 'quality does not increase further' do
+        expect(item[0].quality).to eq(50)
       end
     end
   end
 
-  describe 'BACKSTAGE PASSES' do
+  describe '#update_quality for BACKSTAGE PASSES' do
+
     context 'when the sell_in is higher than 11' do
       item = [Item.new('Backstage passes to a TAFKAL80ETC concert', 12, 2)]
 
@@ -50,9 +57,7 @@ describe GildedRose do
       end
 
       it 'the items quality increases by one' do
-        expect { GildedRose.new(item).update_quality }.to change {
-          item[0].quality
-        }.by(1)
+        expect(  item[0].quality).to eq(3)
       end
     end
 
@@ -81,10 +86,10 @@ describe GildedRose do
         }.by(-1)
       end
 
-        it 'the quality increases by two' do
-          expect { GildedRose.new(item).update_quality }.to change {
-            item[0].quality
-          }.by(3)
+      it 'the quality increases by two' do
+        expect { GildedRose.new(item).update_quality }.to change {
+          item[0].quality
+        }.by(3)
       end
     end
 
@@ -110,14 +115,16 @@ describe GildedRose do
     end
 
     context 'when the quality is already 50' do
-      it 'the quality increases by two' do
-        item = [Item.new('Backstage passes to a TAFKAL80ETC concert', 4, 50)]
+      item = [Item.new('Backstage passes to a TAFKAL80ETC concert', 4, 50)]
+
+      it 'decreases sell_in by one' do
         expect { GildedRose.new(item).update_quality }.to change {
           item[0].sell_in
         }.by(-1)
-        expect { GildedRose.new(item).update_quality }.to change {
-          item[0].quality
-        }.by(0)
+      end
+
+      it 'quality does not increase further' do
+        expect(item[0].quality).to eq 50
       end
     end
   end
