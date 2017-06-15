@@ -55,7 +55,7 @@ describe GildedRose do
       end
 
       it 'the items quality increases by one' do
-        expect(  item[0].quality).to eq(3)
+        expect(item[0].quality).to eq(3)
       end
     end
 
