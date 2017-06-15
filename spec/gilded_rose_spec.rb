@@ -2,7 +2,6 @@ require 'gilded_rose'
 
 describe GildedRose do
   describe '#update_quality for AGED BRIE' do
-
     context 'when the sell_in is higher than 0' do
       item = [Item.new('Aged Brie', 2, 0)]
 
@@ -46,7 +45,6 @@ describe GildedRose do
   end
 
   describe '#update_quality for BACKSTAGE PASSES' do
-
     context 'when the sell_in is higher than 11' do
       item = [Item.new('Backstage passes to a TAFKAL80ETC concert', 12, 2)]
 
@@ -154,7 +152,34 @@ describe GildedRose do
       it 'decreases quality by one' do
         expect(item[0].quality).to eq(22)
       end
+    end
 
+    context 'when sell_in is zero or lower' do
+      item = [Item.new('Mana restoring potion', 0, 23)]
+
+      it 'decreases sell_in by one' do
+        expect { GildedRose.new(item).update_quality }.to change {
+          item[0].sell_in
+        }.by(-1)
+      end
+
+      it 'decreases quality by two' do
+        expect(item[0].quality).to eq(21)
+      end
+    end
+
+    context 'when quality is alreday 0' do
+      item = [Item.new('Mana restoring potion', 3, 0)]
+
+      it 'decreases sell_in by one' do
+        expect { GildedRose.new(item).update_quality }.to change {
+          item[0].sell_in
+        }.by(-1)
+      end
+
+      it 'does not decrease quality any further' do
+        expect(item[0].quality).to eq(0)
+      end
     end
   end
 end
