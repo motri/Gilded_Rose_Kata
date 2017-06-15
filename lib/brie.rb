@@ -1,5 +1,4 @@
-require_relative 'item.rb'
-
+# It understands brie
 class Brie
   attr_accessor :update_brie, :item
 
