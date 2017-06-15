@@ -126,7 +126,7 @@ describe GildedRose do
   end
 
   describe '#update_quality for SULFURAS, HAND OF RAGNAROS' do
-    context "Sulfuras's quality is never changed" do
+    context "Sulfuras's quality and sell_in are never changed" do
       item = [Item.new('Sulfuras, Hand of Ragnaros', 4, 34)]
 
       it 'does not decrease sell_in' do
@@ -138,6 +138,23 @@ describe GildedRose do
       it 'does not change quality' do
         expect(item[0].quality).to eq(34)
       end
+    end
+  end
+
+  describe '#update_quality for REGULAR OBJECTS' do
+    context 'when sell_in is higher than 0' do
+      item = [Item.new('Mana restoring potion', 5, 23)]
+
+      it 'decreases sell_in by one' do
+        expect { GildedRose.new(item).update_quality }.to change {
+          item[0].sell_in
+        }.by(-1)
+      end
+
+      it 'decreases quality by one' do
+        expect(item[0].quality).to eq(22)
+      end
+
     end
   end
 end
