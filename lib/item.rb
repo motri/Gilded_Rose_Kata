@@ -1,3 +1,4 @@
+# It understands item objects
 class Item
   attr_accessor :name, :sell_in, :quality
 

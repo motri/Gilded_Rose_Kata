@@ -1,3 +1,4 @@
+# It understands conjured objects
 class Conjured
   attr_accessor :update_conjured
 
@@ -6,7 +7,10 @@ class Conjured
   end
 
   def update_conjured
-    @item.sell_in -= 1
-    @item.quality -= 2 unless @item.quality.zero?
+    return if @item.quality.zero?
+    @item.quality -= 1 unless @item.quality.zero?
+    return if @item.quality.zero?
+    @item.quality -= 1 unless @item.quality.zero?
+    return if @item.quality.zero?
   end
 end

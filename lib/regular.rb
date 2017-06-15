@@ -1,3 +1,4 @@
+# It understands regular items
 class Regular
   attr_accessor :update_regular
 
@@ -6,9 +7,9 @@ class Regular
   end
 
   def update_regular
-    @item.sell_in -= 1
     return if @item.quality.zero?
     @item.quality -= 1
+    return if @item.quality.zero?
     @item.quality -= 1 if @item.sell_in <= 0
   end
 end

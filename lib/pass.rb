@@ -7,7 +7,6 @@ class Pass
   end
 
   def update_pass
-    @item.sell_in -= 1
     @item.quality = 0 if @item.sell_in < 0
     return if @item.quality.zero?
     return if @item.quality == 50
