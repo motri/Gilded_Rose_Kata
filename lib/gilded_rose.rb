@@ -1,4 +1,13 @@
 # It understands updating items params
+require_relative './brie.rb'
+require_relative './conjured.rb'
+require_relative './pass.rb'
+require_relative 'regular.rb'
+require_relative 'item.rb'
+require_relative 'sort.rb'
+
+
+
 class GildedRose
   def initialize(items)
     @items = items

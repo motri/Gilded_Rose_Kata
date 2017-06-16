@@ -9,9 +9,14 @@ class Conjured
 
   def update_conjured
     return if @item.quality.zero?
-    2.times do
-      @item.quality -= 1 unless @item.quality.zero?
+    if @item.sell_in >= 0
+      2.times do
+        @item.quality -= 1 unless @item.quality.zero?
+      end
+    else
+      4.times do
+        @item.quality -= 1 unless @item.quality.zero?
+      end
     end
   end
-
 end

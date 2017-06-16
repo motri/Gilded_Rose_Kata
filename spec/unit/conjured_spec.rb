@@ -10,7 +10,22 @@ describe 'Conjured' do
       end
     end
 
-    context 'when quality higher than' do
+    context 'when sell_in is less than 0' do
+      item = Item.new('Mana restoring potion', -1, 34)
+      Conjured.new(item).update_conjured
+
+      it 'decreases the quality by four' do
+        expect(item.quality).to eq(30)
+      end
+    end
+
+    context 'when quality is 0' do
+      item = Item.new('Mana restoring potion', -6, 0)
+      Conjured.new(item).update_conjured
+
+      it 'decreases the quality by four' do
+        expect(item.quality).to eq(0)
+      end
     end
   end
 end
