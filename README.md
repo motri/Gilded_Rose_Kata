@@ -1,5 +1,5 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/motri/Gilded_Rose_Kata?branch=master)](https://bettercodehub.com/)
-
+[![Travis-CI](https://travis-ci.org/motri/Gilded_Rose_Kata.svg?branch=master)
 # GildedRose-Refactoring-Kata
 
 This kata deals with legacy code and its subsequent refactoring. The original script a
