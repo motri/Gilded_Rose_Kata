@@ -24,4 +24,4 @@ As a first step I decided to provide tests for the existing script before trying
 Encapsulation seemed a logical next step. Extracting smaller functions from the main function. \
 The structure of the tests allowed me to focus on individual parts when working to make
 the original tests pass with new code in a methodical way. \
-Then I proceeded to extract those functions into classes. \
+Then I proceeded to extract those functions into classes. 
