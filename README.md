@@ -1,3 +1,5 @@
+[![BCH compliance](https://bettercodehub.com/edge/badge/motri/Gilded_Rose_Kata?branch=master)](https://bettercodehub.com/)
+
 # GildedRose-Refactoring-Kata
 
 This kata deals with legacy code and its subsequent refactoring. The original script a
@@ -22,4 +24,4 @@ Encapsulation seemed a logical next step. Extracting smaller functions from the 
 The structure of the tests allowed me to focus on individual parts when working to make
 the original tests pass with new code in a methodical way.
 Then I proceeded to extract those functions into classes.
-My aim moving forward is to explore polymorphism, dynamic method calling and class methods to further improve the quality of the script. 
+My aim moving forward is to explore polymorphism, dynamic method calling and class methods to further improve the quality of the script.
