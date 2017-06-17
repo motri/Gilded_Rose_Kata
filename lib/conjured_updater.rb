@@ -1,7 +1,6 @@
 # It understands conjured objects
-class Conjured
+class ConjuredUpdater
   attr_accessor :update_conjured
-
 
   def initialize(item)
     @item = item

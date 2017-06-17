@@ -16,6 +16,10 @@ class Pass
   def increase_quality
     @item.quality += 1
     @item.quality += 1 if @item.sell_in < 11
-    @item.quality += 1 if @item.sell_in < 5
+    @item.quality += 1 if less_than_five_days
+  end
+
+  def less_than_five_days
+    @item.sell_in < 5
   end
 end

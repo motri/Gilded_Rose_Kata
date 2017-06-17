@@ -1,6 +1,5 @@
 require 'gilded_rose'
 
-
 describe GildedRose do
   describe '#update_quality for AGED BRIE' do
     context 'when the sell_in is higher than 0' do
