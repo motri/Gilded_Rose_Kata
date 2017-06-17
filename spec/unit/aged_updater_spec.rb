@@ -1,4 +1,4 @@
-require 'aged_updater'
+require 'updaters/aged_updater'
 require 'item'
 
 describe 'Aged' do

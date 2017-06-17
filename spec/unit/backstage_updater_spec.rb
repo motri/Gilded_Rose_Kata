@@ -1,4 +1,4 @@
-require 'backstage_updater'
+require 'updaters/backstage_updater'
 require 'item'
 
 describe 'Backstage' do

@@ -1,4 +1,4 @@
-require 'regular_updater'
+require 'updaters/regular_updater'
 require 'item'
 
 describe 'RegularUpdater' do
