@@ -14,7 +14,7 @@ This kata deals with legacy code and its subsequent refactoring. The original sc
 ## Usage
 ```
 Clone the repo, run bundle install and rspec for testing. Additionally for a wider picture
-of the scripts' features, run " ruby texttest_fixture.rb ".
+of the scripts' features, run " ruby spec/texttest_fixture.rb ".
 ```
 
 ## Approach
