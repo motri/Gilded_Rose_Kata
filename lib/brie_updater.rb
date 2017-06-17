@@ -22,11 +22,11 @@ class BrieUpdater
     @item.sell_in >= 0
   end
 
-  def udpdate_expired
-    @item.quality += 2 if @item.sell_in < 0
+  def update
+    @item.quality += 1
   end
 
-  def update
-    @item.quality += 1 if @item.sell_in >= 0
+  def udpdate_expired
+    @item.quality += 2
   end
 end
