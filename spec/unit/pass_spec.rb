@@ -1,4 +1,5 @@
 require 'pass'
+require 'item'
 
 describe 'Pass' do
   describe '#update_pass' do

@@ -7,19 +7,33 @@ class Pass
   end
 
   def update_pass
-    @item.quality = 0 if @item.sell_in < 0
-    return if @item.quality.zero?
-    return if @item.quality == MAX_QUALITY
-    increase_quality
+    sell_in_expired ? reduce_quality_to_zero : increase_quality
+    # meets_constrictions ? raise 'restriction met' : update_quality
+  end
+
+  private
+
+  def reduce_quality_to_zero
+    @item.quality = 0
+  end
+
+  def meets_constrictions
+    @item.quality.zero? || @item.quality == MAX_QUALITY
   end
 
   def increase_quality
     @item.quality += 1
-    @item.quality += 1 if @item.sell_in < 11
-    @item.quality += 1 if less_than_five_days
   end
 
-  def less_than_five_days
-    @item.sell_in < 5
+  def sell_in_expired
+    @item.sell_in < 0
+  end
+
+  def update_quality
+    mid_sell_in_range ? increase_quality : 2.times { increase_quality }
+  end
+
+  def mid_sell_in_range
+    (10..5).cover?(@item.sell_in)
   end
 end

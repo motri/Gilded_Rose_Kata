@@ -1,12 +1,12 @@
 require 'gilded_rose'
 
 describe GildedRose do
-  describe '#update_quality for AGED BRIE' do
+  describe '#update_items for AGED BRIE' do
     context 'when the sell_in is higher than 0' do
       item = [Item.new('Aged Brie', 2, 0)]
 
       it 'decreases sell_in by one' do
-        expect { GildedRose.new(item).update_quality }.to change {
+        expect { GildedRose.new(item).update_items }.to change {
           item[0].sell_in
         }.by(-1)
       end
@@ -20,7 +20,7 @@ describe GildedRose do
       item = [Item.new('Aged Brie', -1, 0)]
 
       it 'decreases sell_in by one' do
-        expect { GildedRose.new(item).update_quality }.to change {
+        expect { GildedRose.new(item).update_items }.to change {
           item[0].sell_in
         }.by(-1)
       end
@@ -33,7 +33,7 @@ describe GildedRose do
       item = [Item.new('Aged Brie', 0, 50)]
 
       it 'decreases sell_in by one' do
-        expect { GildedRose.new(item).update_quality }.to change {
+        expect { GildedRose.new(item).update_items }.to change {
           item[0].sell_in
         }.by(-1)
       end
@@ -44,12 +44,12 @@ describe GildedRose do
     end
   end
 
-  describe '#update_quality for BACKSTAGE PASSES' do
+  describe '#update_items for BACKSTAGE PASSES' do
     context 'when the sell_in is higher than 11' do
       item = [Item.new('Backstage passes to a TAFKAL80ETC concert', 12, 2)]
 
       it 'the items sell_in drops by one' do
-        expect { GildedRose.new(item).update_quality }.to change {
+        expect { GildedRose.new(item).update_items }.to change {
           item[0].sell_in
         }.by(-1)
       end
@@ -63,7 +63,7 @@ describe GildedRose do
       item = [Item.new('Backstage passes to a TAFKAL80ETC concert', 8, 2)]
 
       it 'decreases the sell_in date by one' do
-        expect { GildedRose.new(item).update_quality }.to change {
+        expect { GildedRose.new(item).update_items }.to change {
           item[0].sell_in
         }.by(-1)
       end
@@ -77,7 +77,7 @@ describe GildedRose do
       item = [Item.new('Backstage passes to a TAFKAL80ETC concert', 4, 2)]
 
       it 'the items sell_in decreases by one' do
-        expect { GildedRose.new(item).update_quality }.to change {
+        expect { GildedRose.new(item).update_items }.to change {
           item[0].sell_in
         }.by(-1)
       end
@@ -91,7 +91,7 @@ describe GildedRose do
       item = [Item.new('Backstage passes to a TAFKAL80ETC concert', 0, 2)]
 
       it 'sell_in is still decreased by one' do
-        expect { GildedRose.new(item).update_quality }.to change {
+        expect { GildedRose.new(item).update_items }.to change {
           item[0].sell_in
         }.by(-1)
       end
@@ -102,7 +102,7 @@ describe GildedRose do
 
       it 'quality does not decrease any further' do
         # method is run again to unsure the quality stays the same even after.
-        expect { GildedRose.new(item).update_quality }.to change {
+        expect { GildedRose.new(item).update_items }.to change {
           item[0].quality
         }.by(0)
       end
@@ -112,7 +112,7 @@ describe GildedRose do
       item = [Item.new('Backstage passes to a TAFKAL80ETC concert', 4, 50)]
 
       it 'decreases sell_in by one' do
-        expect { GildedRose.new(item).update_quality }.to change {
+        expect { GildedRose.new(item).update_items }.to change {
           item[0].sell_in
         }.by(-1)
       end
@@ -123,12 +123,12 @@ describe GildedRose do
     end
   end
 
-  describe '#update_quality for SULFURAS, HAND OF RAGNAROS' do
+  describe '#update_items for SULFURAS, HAND OF RAGNAROS' do
     context "Sulfuras's quality and sell_in are never changed" do
       item = [Item.new('Sulfuras, Hand of Ragnaros', 4, 34)]
 
       it 'does not decrease sell_in' do
-        expect { GildedRose.new(item).update_quality }.to change {
+        expect { GildedRose.new(item).update_items }.to change {
           item[0].sell_in
         }.by(0)
       end
@@ -139,12 +139,12 @@ describe GildedRose do
     end
   end
 
-  describe '#update_quality for REGULAR OBJECTS' do
+  describe '#update_items for REGULAR OBJECTS' do
     context 'when sell_in is higher than 0' do
       item = [Item.new('Mana restoring potion', 5, 23)]
 
       it 'decreases sell_in by one' do
-        expect { GildedRose.new(item).update_quality }.to change {
+        expect { GildedRose.new(item).update_items }.to change {
           item[0].sell_in
         }.by(-1)
       end
@@ -158,7 +158,7 @@ describe GildedRose do
       item = [Item.new('Mana restoring potion', 0, 23)]
 
       it 'decreases sell_in by one' do
-        expect { GildedRose.new(item).update_quality }.to change {
+        expect { GildedRose.new(item).update_items }.to change {
           item[0].sell_in
         }.by(-1)
       end
@@ -172,7 +172,7 @@ describe GildedRose do
       item = [Item.new('Mana restoring potion', 3, 0)]
 
       it 'decreases sell_in by one' do
-        expect { GildedRose.new(item).update_quality }.to change {
+        expect { GildedRose.new(item).update_items }.to change {
           item[0].sell_in
         }.by(-1)
       end

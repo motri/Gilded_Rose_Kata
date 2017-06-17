@@ -8,8 +8,20 @@ class Regular
 
   def update_regular
     return if @item.quality.zero?
-    @item.quality -= 1
-    return if @item.quality.zero?
-    @item.quality -= 1 if @item.sell_in <= 0
+    sell_in_valid ? update : udpdate_expired
+  end
+
+  private
+
+  def sell_in_valid
+    @item.sell_in >= 0
+  end
+
+  def update
+    @item.quality -= 1 unless @item.quality.zero?
+  end
+
+  def udpdate_expired
+    2.times { @item.quality -= 1 unless @item.quality.zero? }
   end
 end

@@ -11,8 +11,8 @@ describe 'Regular' do
       end
     end
 
-    context 'when sell_in is zero or lower' do
-      item = Item.new('Mana restoring potion', 0, 23)
+    context 'when sell_in is lower than zero' do
+      item = Item.new('Mana restoring potion', -1, 23)
       Regular.new(item).update_regular
 
       it 'decreases quality by two' do
