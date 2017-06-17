@@ -3,7 +3,7 @@
     "coverage": {
       "/Users/unaimotriko/projects/weekly_challenges/Gilded_Rose_Kata/spec/feature/gilded_rose_spec.rb": [
         1,
-        1,
+        null,
         null,
         1,
         1,
@@ -216,6 +216,7 @@
       ],
       "/Users/unaimotriko/projects/weekly_challenges/Gilded_Rose_Kata/lib/brie.rb": [
         null,
+        1,
         1,
         1,
         null,
@@ -517,6 +518,6 @@
         null
       ]
     },
-    "timestamp": 1497624404
+    "timestamp": 1497689826
   }
 }
