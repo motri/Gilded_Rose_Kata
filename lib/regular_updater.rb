@@ -1,14 +1,13 @@
 # It understands regular items
-class Regular
-  attr_accessor :update_regular
+class RegularUpdater
 
   def initialize(item)
     @item = item
   end
 
-  def update_regular
+  def update
     return if @item.quality.zero?
-    sell_in_valid ? update : udpdate_expired
+    sell_in_valid ? update_fresh : udpdate_expired
   end
 
   private
@@ -17,7 +16,7 @@ class Regular
     @item.sell_in >= 0
   end
 
-  def update
+  def update_fresh
     @item.quality -= 1 unless @item.quality.zero?
   end
 

@@ -1,10 +1,11 @@
-require 'regular'
+require 'regular_updater'
+require 'item'
 
-describe 'Regular' do
+describe 'RegularUpdater' do
   describe '#update_regular' do
     context 'when sell_in is higher than 0' do
       item = Item.new('Mana restoring potion', 5, 23)
-      Regular.new(item).update_regular
+      RegularUpdater.new(item).update
 
       it 'decreases quality by one' do
         expect(item.quality).to eq(22)
@@ -13,7 +14,7 @@ describe 'Regular' do
 
     context 'when sell_in is lower than zero' do
       item = Item.new('Mana restoring potion', -1, 23)
-      Regular.new(item).update_regular
+      RegularUpdater.new(item).update
 
       it 'decreases quality by two' do
         expect(item.quality).to eq(21)
@@ -22,7 +23,7 @@ describe 'Regular' do
 
     context 'when quality is alreday 0' do
       item = Item.new('Mana restoring potion', 3, 0)
-      Regular.new(item).update_regular
+      RegularUpdater.new(item).update
 
       it 'does not decrease quality any further' do
         expect(item.quality).to eq(0)

@@ -1,15 +1,15 @@
 # It understands brie
-class BrieUpdater
-  attr_accessor :update_brie
+class Aged
+
   MAX_QUALITY = 50
 
   def initialize(item)
     @item = item
   end
 
-  def update_brie
+  def update
     return if quality_at_maximum
-    sell_in_valid ? update : udpdate_expired
+    sell_in_valid ? update_fresh : udpdate_expired
   end
 
   private
@@ -22,7 +22,7 @@ class BrieUpdater
     @item.sell_in >= 0
   end
 
-  def update
+  def update_fresh
     @item.quality += 1
   end
 

@@ -1,11 +1,12 @@
-require 'pass'
+require 'backstage_updater'
 require 'item'
 
-describe 'Pass' do
-  describe '#update_pass' do
+
+describe 'Backstage' do
+  describe '#update' do
     context 'when the sell_in is higher than 11' do
       item = Item.new('Backstage passes to a TAFKAL80ETC concert', 12, 2)
-      Pass.new(item).update_pass
+      Backstage.new(item).update
 
       it 'the items quality increases by one' do
         expect(item.quality).to eq(3)
@@ -13,17 +14,17 @@ describe 'Pass' do
     end
 
     context 'when the sell_in is higher than 5 but lower than 11' do
-      item = Item.new('Backstage passes to a TAFKAL80ETC concert', 8, 2)
-      Pass.new(item).update_pass
+      item = Item.new('Backstage passes to a TAFKAL80ETC concert', 8, 40)
+      Backstage.new(item).update
 
       it 'the quality increases by two' do
-        expect(item.quality).to eq(4)
+        expect(item.quality).to eq(42)
       end
     end
 
     context 'when the sell_in is lower than 5' do
       item = Item.new('Backstage passes to a TAFKAL80ETC concert', 4, 2)
-      Pass.new(item).update_pass
+      Backstage.new(item).update
 
       it 'the quality increases by three' do
         expect(item.quality).to eq(5)
@@ -32,7 +33,7 @@ describe 'Pass' do
 
     context 'when the sell_in is lower than  0' do
       item = Item.new('Backstage passes to a TAFKAL80ETC concert', -1, 2)
-      Pass.new(item).update_pass
+      Backstage.new(item).update
 
       it 'the passes quality drops to 0' do
         expect(item.quality).to eq 0
@@ -40,7 +41,7 @@ describe 'Pass' do
 
       it 'quality does not decrease any further' do
         # method is run again to unsure the quality stays the same even after.
-        expect { Pass.new(item).update_pass }.to change {
+        expect { Backstage.new(item).update }.to change {
           item.quality
         }.by(0)
       end
@@ -48,7 +49,7 @@ describe 'Pass' do
 
     context 'when the quality is already 50' do
       item = Item.new('Backstage passes to a TAFKAL80ETC concert', 4, 50)
-      Pass.new(item).update_pass
+      Backstage.new(item).update
 
       it 'quality does not increase further' do
         expect(item.quality).to eq(50)

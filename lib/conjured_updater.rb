@@ -1,14 +1,13 @@
-# It understands conjured objects
-class ConjuredUpdater
-  attr_accessor :update_conjured
+# It understands conjured objects update variables
+class Conjured
 
   def initialize(item)
     @item = item
   end
 
-  def update_conjured
+  def update
     return if @item.quality.zero?
-    sell_in_valid ? update : udpdate_expired
+    sell_in_valid ? update_fresh : udpdate_expired
   end
 
   private
@@ -17,7 +16,7 @@ class ConjuredUpdater
     @item.sell_in >= 0
   end
 
-  def update
+  def update_fresh
     2.times { @item.quality -= 1 unless @item.quality.zero? }
   end
 

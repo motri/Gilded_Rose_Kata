@@ -211,13 +211,12 @@
         1,
         12,
         null,
-        null,
         null
       ],
-      "/Users/unaimotriko/projects/weekly_challenges/Gilded_Rose_Kata/lib/brie_updater.rb": [
+      "/Users/unaimotriko/projects/weekly_challenges/Gilded_Rose_Kata/lib/aged_updater.rb": [
         null,
         1,
-        1,
+        null,
         1,
         null,
         1,
@@ -251,7 +250,6 @@
       "/Users/unaimotriko/projects/weekly_challenges/Gilded_Rose_Kata/lib/conjured_updater.rb": [
         null,
         1,
-        1,
         null,
         1,
         3,
@@ -277,10 +275,10 @@
         null,
         null
       ],
-      "/Users/unaimotriko/projects/weekly_challenges/Gilded_Rose_Kata/lib/pass.rb": [
+      "/Users/unaimotriko/projects/weekly_challenges/Gilded_Rose_Kata/lib/backstage_updater.rb": [
         null,
         1,
-        1,
+        null,
         1,
         1,
         12,
@@ -288,7 +286,7 @@
         null,
         1,
         12,
-        null,
+        12,
         null,
         null,
         1,
@@ -298,11 +296,11 @@
         null,
         null,
         1,
-        0,
+        12,
         null,
         null,
         1,
-        8,
+        14,
         null,
         null,
         1,
@@ -310,17 +308,16 @@
         null,
         null,
         1,
-        0,
+        8,
         null,
         null,
         1,
-        0,
+        4,
         null,
         null
       ],
-      "/Users/unaimotriko/projects/weekly_challenges/Gilded_Rose_Kata/lib/regular.rb": [
+      "/Users/unaimotriko/projects/weekly_challenges/Gilded_Rose_Kata/lib/regular_updater.rb": [
         null,
-        1,
         1,
         null,
         1,
@@ -344,7 +341,6 @@
         null,
         1,
         6,
-        null,
         null,
         null
       ],
@@ -369,26 +365,25 @@
         1,
         1,
         13,
-        null,
-        null,
-        1,
         13,
         null,
-        null,
-        1,
         null,
         1,
         13,
         null,
         null,
         1,
-        13,
-        13,
+        null,
+        1,
         13,
         null,
         null,
         1,
-        13,
+        10,
+        null,
+        null,
+        1,
+        3,
         null,
         null
       ],
@@ -409,6 +404,7 @@
         null
       ],
       "/Users/unaimotriko/projects/weekly_challenges/Gilded_Rose_Kata/spec/unit/conjured_updater_spec.rb": [
+        1,
         1,
         null,
         1,
@@ -453,9 +449,10 @@
         null,
         null
       ],
-      "/Users/unaimotriko/projects/weekly_challenges/Gilded_Rose_Kata/spec/unit/pass_spec.rb": [
+      "/Users/unaimotriko/projects/weekly_challenges/Gilded_Rose_Kata/spec/unit/pass_updater_spec.rb": [
         1,
         1,
+        null,
         null,
         1,
         1,
@@ -515,6 +512,7 @@
       ],
       "/Users/unaimotriko/projects/weekly_challenges/Gilded_Rose_Kata/spec/unit/regular_spec.rb": [
         1,
+        1,
         null,
         1,
         1,
@@ -548,6 +546,6 @@
         null
       ]
     },
-    "timestamp": 1497706334
+    "timestamp": 1497711745
   }
 }

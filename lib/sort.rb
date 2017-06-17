@@ -2,10 +2,11 @@
 class Sort
   def initialize(item)
     @item = item
+    @type = @item.name.split.first
   end
 
   def update_item_by_type
-    udpdate_special || update_regular
+    item_special ? udpdate_special : update_regular
   end
 
   private
@@ -15,12 +16,10 @@ class Sort
   end
 
   def udpdate_special
-    BrieUpdater.new(@item).update_brie if @item.name =~ /Brie/
-    Pass.new(@item).update_pass if @item.name =~ /passes/
-    ConjuredUpdater.new(@item).update_conjured if @item.name =~ /Conjured/
+    Module.const_get("#{@type}").new(@item).update
   end
 
   def update_regular
-    Regular.new(@item).update_regular unless item_special
+    RegularUpdater.new(@item).update
   end
 end

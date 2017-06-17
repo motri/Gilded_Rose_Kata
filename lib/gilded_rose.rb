@@ -1,7 +1,7 @@
-require_relative 'brie_updater.rb'
+require_relative 'aged_updater.rb'
 require_relative 'conjured_updater.rb'
-require_relative 'pass.rb'
-require_relative 'regular.rb'
+require_relative 'backstage_updater.rb'
+require_relative 'regular_updater.rb'
 require_relative 'item.rb'
 require_relative 'sort.rb'
 

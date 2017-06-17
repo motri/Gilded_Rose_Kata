@@ -1,14 +1,14 @@
-# It understands pass
-class Pass
-  attr_accessor :update_pass
+# It understands backstage passess update variables
+class Backstage
+
   MAX_QUALITY = 50
   def initialize(item)
     @item = item
   end
 
-  def update_pass
+  def update
     sell_in_expired ? reduce_quality_to_zero : increase_quality
-    # meets_constrictions ? raise 'restriction met' : update_quality
+    meets_constrictions ? return : update_quality
   end
 
   private
@@ -18,11 +18,11 @@ class Pass
   end
 
   def meets_constrictions
-    @item.quality.zero? || @item.quality == MAX_QUALITY
+    @item.quality.zero? || @item.quality == MAX_QUALITY || @item.sell_in >= 11
   end
 
   def increase_quality
-    @item.quality += 1
+    @item.quality += 1 unless @item.quality == MAX_QUALITY
   end
 
   def sell_in_expired
@@ -34,6 +34,6 @@ class Pass
   end
 
   def mid_sell_in_range
-    (10..5).cover?(@item.sell_in)
+    (5..10).include?(@item.sell_in)
   end
 end
