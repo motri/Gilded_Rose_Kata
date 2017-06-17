@@ -26,3 +26,6 @@ scala/**/*
 Smalltalk/**/*
 swift/**/*
 coverage/**/*
+GildedRoseRequirements_es.md
+coverage
+Gemfile.lock
