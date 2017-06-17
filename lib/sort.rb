@@ -1,8 +1,7 @@
-# It sorts the item type
+# It sorts the item update type
 class Sort
   def initialize(item)
     @item = item
-    @type = @item.name.split.first
   end
 
   def update_item_by_type
@@ -16,7 +15,7 @@ class Sort
   end
 
   def udpdate_special
-    Module.const_get("#{@type}").new(@item).update
+    Module.const_get(@item.name.split.first).new(@item).update
   end
 
   def update_regular

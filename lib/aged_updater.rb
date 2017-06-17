@@ -1,6 +1,5 @@
-# It understands brie
+# It understands aged brie update variables
 class Aged
-
   MAX_QUALITY = 50
 
   def initialize(item)

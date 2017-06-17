@@ -18,6 +18,7 @@ class GildedRose
   private
 
   def update(item)
-    item.sell_in -= 1; Sort.new(item).update_item_by_type
+    item.sell_in -= 1
+    Sort.new(item).update_item_by_type
   end
 end

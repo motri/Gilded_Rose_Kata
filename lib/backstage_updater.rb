@@ -1,6 +1,5 @@
 # It understands backstage passess update variables
 class Backstage
-
   MAX_QUALITY = 50
   def initialize(item)
     @item = item
@@ -34,6 +33,6 @@ class Backstage
   end
 
   def mid_sell_in_range
-    (5..10).include?(@item.sell_in)
+    (5..10).cover?(@item.sell_in)
   end
 end

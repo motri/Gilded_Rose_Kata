@@ -1,7 +1,6 @@
 require 'backstage_updater'
 require 'item'
 
-
 describe 'Backstage' do
   describe '#update' do
     context 'when the sell_in is higher than 11' do

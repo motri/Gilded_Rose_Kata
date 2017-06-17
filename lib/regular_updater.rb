@@ -1,6 +1,5 @@
-# It understands regular items
+# It understands regular items update variables
 class RegularUpdater
-
   def initialize(item)
     @item = item
   end
