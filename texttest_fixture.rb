@@ -1,6 +1,6 @@
 
 
-require_relative 'gilded_rose.rb'
+require_relative './lib/gilded_rose.rb'
 
 puts 'OMGHAI!'
 items = [
@@ -26,5 +26,5 @@ gilded_rose = GildedRose.new items
     puts item
   end
   puts ''
-  gilded_rose.update_quality
+  gilded_rose.update_items
 end
