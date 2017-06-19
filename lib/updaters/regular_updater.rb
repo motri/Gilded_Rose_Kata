@@ -20,6 +20,7 @@ class RegularUpdater
   end
 
   def udpdate_expired
-    2.times { @item.quality -= 1 unless @item.quality.zero? }
+   @item.quality -= 2
+   @item.quality = 0 if @item.quality < 0
   end
 end

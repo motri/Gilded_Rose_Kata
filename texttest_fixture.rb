@@ -1,6 +1,11 @@
-
-
 require_relative './lib/gilded_rose.rb'
+require_relative './lib/item.rb'
+require_relative './lib/sort.rb'
+require_relative './lib/updaters/aged_updater.rb'
+require_relative './lib/updaters/backstage_updater.rb'
+require_relative './lib/updaters/conjured_updater.rb'
+require_relative './lib/updaters/regular_updater.rb'
+
 
 puts 'OMGHAI!'
 items = [
