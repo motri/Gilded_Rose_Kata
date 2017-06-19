@@ -8,7 +8,7 @@ class Aged
 
   def update
     return if quality_at_maximum
-    sell_in_expired ? update_fresh : udpdate_expired
+    sell_in_expired ? update_fresh : update_expired
   end
 
   private
@@ -25,7 +25,7 @@ class Aged
     @item.quality += 1
   end
 
-  def udpdate_expired
+  def update_expired
     @item.quality += 2
   end
 end
