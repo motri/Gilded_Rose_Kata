@@ -1,5 +1,5 @@
 require 'gilded_rose'
-
+require 'item'
 describe GildedRose do
   describe '#update_items for AGED BRIE' do
     context 'when the sell_in is higher than 0' do

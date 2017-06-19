@@ -1,4 +1,5 @@
 require 'updaters/conjured_updater'
+require 'updaters/regular_updater'
 require 'item'
 
 describe 'ConjuredUpdater' do

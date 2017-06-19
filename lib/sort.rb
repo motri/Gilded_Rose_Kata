@@ -5,7 +5,7 @@ class Sort
   end
 
   def update_item_by_type
-    item_special ? udpdate_special : update_regular
+    item_special ? udpdate_special_item : update_regular_item
   end
 
   private
@@ -14,11 +14,11 @@ class Sort
     @item.name =~ /(Brie|passes|Conjured)/
   end
 
-  def udpdate_special
+  def udpdate_special_item
     Module.const_get(@item.name.split.first).new(@item).update
   end
 
-  def update_regular
+  def update_regular_item
     RegularUpdater.new(@item).update
   end
 end

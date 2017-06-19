@@ -6,12 +6,12 @@ class RegularUpdater
 
   def update
     return if @item.quality.zero?
-    sell_in_valid ? update_fresh : udpdate_expired
+    sell_in_expired ? update_fresh : udpdate_expired
   end
 
   private
 
-  def sell_in_valid
+  def sell_in_expired
     @item.sell_in >= 0
   end
 
